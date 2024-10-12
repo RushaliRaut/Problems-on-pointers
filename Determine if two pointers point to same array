@@ -1,0 +1,62 @@
+/*************************************************************************************************************************************************************************
+
+Problem Statement= Design a function that determines if two pointers point to the same array
+Eg:-int arr[]={1,2,3,4}
+*ptr1=&arr[1];
+*ptr2=&arr[3];
+
+Output:- Both the elements are of similar array
+
+
+**************************************************************************************************************************************************************************/
+
+
+#include <stdio.h>
+
+void find (int* pointer1,int* pointer2,int size);
+
+int main()
+{
+    int Array1[]={1,3,5,7,8};
+    
+    int Array2[]={3,2,1,6,7};
+    
+    int *ptr1=&Array1[2];
+    
+    int *ptr2=&Array2[4];
+    
+    int Elements_Array_1;
+    
+    Elements_Array_1=(sizeof(Array1)/sizeof(Array1[0]));  //This statement will give
+                                                          //  number of elements in array
+    
+    if(ptr1 != &Array1[0])
+    {
+        ptr1=&Array1[0];
+    }
+    find(ptr1,ptr2,Elements_Array_1);
+    
+    return 0;
+}
+
+void find (int* pointer1,int* pointer2,int size)
+{
+    
+    if((pointer2)>(pointer1+size))
+    {
+        printf("Both the elements are of different arrays");
+    }
+    else
+    {
+        printf("Both the elements are of same arrays");
+    }
+    
+}
+
+
+/******************************************************************output*************************************************************************************************/
+/*
+Both the elements are of different arrays
+*/
+
+
